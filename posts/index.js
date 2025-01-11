@@ -22,7 +22,7 @@ app.post('/posts', async (req, res) => {      // new route
   posts[id] = {
     id, title
   };
-  await axios.post('http://localhost:4005/events', {
+  await axios.post('http://event-bus-srv:4005/events', {
     type: 'PostCreated',
     data: {
       id, title
@@ -37,5 +37,7 @@ app.post('/events', (req, res) => {
 });  // new route
 
 app.listen(4000, () => {
+  console.log("Hey this is the change basically im doing to update my deployment!")
+  console.log('just another change to check the deployment method 2');
   console.log('Listening on 4000');
 });
